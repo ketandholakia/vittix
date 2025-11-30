@@ -241,7 +241,6 @@ begin
     ShortcutMgr := TShortcutManager.Create(ActionManager1, 'shortcuts.json');
     ShortcutMgr.LoadShortcuts;
   end;
-
   ApplyPermissions;
   UpdateConnectionStatus;
   UpdateUserCount;
@@ -311,10 +310,8 @@ begin
 // 1. Create the form instance if it doesn't exist
   if not Assigned(frmRolesPermissions) then
     frmRolesPermissions := TfrmRolesPermissions.Create(Application);
-
   // 2. Display the form modally
   frmRolesPermissions.ShowModal;
-
   // After the user closes the permission manager, re-apply permissions
   // in case their own role's permissions were changed (usually rare, but safe).
   ApplyPermissions;
@@ -389,51 +386,35 @@ end;
 Procedure TfrmMain.ApplyPermissions;
 begin
   // --- Master Data Permissions ---
-
   // Check if the role has permission to manage users
   actUsersForm.Enabled := HasPermission('manage_users');
-
   // Check if the role has permission to manage companies
   actCompaniesForm.Enabled := HasPermission('manage_companies');
-
   // Check if the role has permission to manage customers
   ActCustomersForm.Enabled := HasPermission('manage_customers');
-
   // Check if the role has permission to manage products
   actProductForm.Enabled := HasPermission('manage_products');
-
   // Check if the role has permission to manage UOM (Units of Measure)
   actUOMForm.Enabled := HasPermission('manage_uom');
-
   // Check if the role has permission to manage Transporters
   actTransportersform.Enabled := HasPermission('manage_transporters');
-
   // Check if the role has permission to manage States (location masters)
   actStateMaster.Enabled := HasPermission('manage_states');
-
   // --- Transaction Permissions ---
-
   // Check if the role has permission to create/view invoices
   ActInvoices.Enabled := HasPermission('access_invoicing');
-
   // --- Configuration/System Permissions ---
-
   // Check if the role has permission to access the tax calculator
   actTaxCalc.Enabled := HasPermission('access_tax_calc');
-
   // Check if the role has permission to manage general company settings
   act_company_config.Enabled := HasPermission('manage_config');
-
   // Check if the role has permission to manage backups
   actbackup.Enabled := HasPermission('manage_backup');
   actBackupRestore.Enabled := HasPermission('manage_backup');
-
   // Check if the role has permission to modify the permission matrix (ADMIN ONLY)
   actn_Role_Permission.Enabled := HasPermission('manage_permissions');
-
   // Check if the role has permission to manage application shortcuts
   actShortKeyManager.Enabled := HasPermission('manage_shortcuts');
-
   // Update status bar to reflect the role
   RzStatusPaneRole.Caption := 'Role: ' + FUserRole;
 end;

@@ -69,8 +69,11 @@ begin
       Application.CreateForm(TfrmMain, frmMain);
       frmMain.Initialize(role);
 
-      // Optional: preload config form for admin role
+      // FIX: Added begin/end block for conditional form creation
       if SameText(role, 'admin') then
+      begin
+        Application.CreateForm(TfrmCompanyConfig, frmCompanyConfig);
+      end;
 
       Application.Run;
     end

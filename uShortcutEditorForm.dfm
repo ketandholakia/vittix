@@ -11,8 +11,10 @@ object frmuShortcutEditor: TfrmuShortcutEditor
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OldCreateOrder = True
   Position = poScreenCenter
   OnCreate = FormCreate
+  PixelsPerInch = 96
   TextHeight = 15
   object pnlBottom: TPanel
     Left = 0
@@ -22,7 +24,6 @@ object frmuShortcutEditor: TfrmuShortcutEditor
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitWidth = 481
     object btnApply: TButton
       Left = 389
       Top = 14

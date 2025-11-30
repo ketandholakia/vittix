@@ -114,3 +114,5 @@ Linux64/
 # -------------------------------------------------------------------------
 packages/
 installers/
+db_backup/backup_20251130_161705.fbk
+backup_test.fbk

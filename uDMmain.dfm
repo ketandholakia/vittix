@@ -9,9 +9,7 @@ object DMmain: TDMmain
       'Password=masterkey'
       'Server=localhost'
       'Port=3050'
-      'Database=D:\ketan\github\firebird-Invoice\VI.FDB'
       'DriverID=FB')
-    Connected = True
     Left = 56
     Top = 8
   end

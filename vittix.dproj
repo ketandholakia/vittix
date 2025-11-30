@@ -89,7 +89,6 @@
         </DelphiCompile>
         <DCCReference Include="uDMmain.pas">
             <Form>DMmain</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="uLoginForm.pas">
@@ -100,66 +99,51 @@
         </DCCReference>
         <DCCReference Include="uUsersForm.pas">
             <Form>frmUsers</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uCompaniesForm.pas">
             <Form>frmCompanies</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uStatesForm.pas">
             <Form>frmStates</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uProductsForm.pas">
             <Form>frmProducts</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uCustomersForm.pas">
             <Form>frmCustomers</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uInvoicesForm.pas">
             <Form>frmInvoices</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uTransporterEditDialog.pas">
             <Form>FrmTransporterEditDialog</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uStateEditDialog.pas">
             <Form>FrmStateEditDialog</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uUOMEditDialog.pas">
             <Form>frmUOMEditDialog</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uCustomerEditDialog.pas">
             <Form>frmCustomerEdit</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uShortcutEditDialog.pas">
             <Form>frmShortcutEditDialog</Form>
         </DCCReference>
         <DCCReference Include="uInvoiceEditForm.pas">
             <Form>frmInvoiceEdit</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uUOMManager.pas">
             <Form>frmUOMManager</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uTransportersForm.pas">
             <Form>frmTransporters</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uBackupRestoreForm.pas">
             <Form>frmBackupRestore</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uShortcutEditorForm.pas">
             <Form>frmuShortcutEditor</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uBackupManager.pas"/>
         <DCCReference Include="uAuthManager.pas"/>
@@ -176,20 +160,16 @@
         </DCCReference>
         <DCCReference Include="uTaxCalcForm.pas">
             <Form>frmTaxCalc</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uCompanyConfigForm.pas">
             <Form>frmCompanyConfig</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uInvoiceUtils.pas"/>
         <DCCReference Include="uInvoiceTypeSelectForm.pas">
             <Form>frmInvoiceTypeSelect</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uRolesPermissionsForm.pas">
             <Form>frmRolesPermissions</Form>
-            <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>

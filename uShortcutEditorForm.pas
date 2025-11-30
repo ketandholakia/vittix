@@ -35,6 +35,7 @@ implementation
 
 {$R *.dfm}
 
+// --- (Existing IsShortcutConflict and vstActionsDblClick procedures remain unchanged) ---
 function TfrmuShortcutEditor.IsShortcutConflict(const NewShortcut: string; const CurrentAction: string): Boolean;
 var
   i: Integer;
@@ -84,6 +85,7 @@ begin
   end;
 end;
 
+// --- CRITICAL FIX: PopulateTree is moved here, ensuring FManager is assigned ---
 constructor TfrmuShortcutEditor.CreateEditor(AOwner: TComponent; Manager: TShortcutManager);
 begin
   inherited Create(AOwner);
@@ -111,19 +113,24 @@ begin
   vstActions.Header.Columns[2].Alignment := taCenter;
 
   vstActions.OnGetText := vstActionsGetText;
+
+  // FIX: Check for the manager and populate the tree here, where FManager is guaranteed to be set
+  if not Assigned(FManager) or not Assigned(FManager.ActionManager) then
+  begin
+     // Show an error but allow the form to exist (it will be empty)
+     ShowMessage('FATAL ERROR: Shortcut manager is missing ActionManager reference.');
+     Exit;
+  end;
+
+  PopulateTree;
 end;
 
 procedure TfrmuShortcutEditor.FormCreate(Sender: TObject);
 begin
   Caption := 'Shortcut Manager';
 
-  if not Assigned(FManager) or not Assigned(FManager.ActionManager) then
-  begin
-    ShowMessage('Shortcut manager or action manager not initialized.');
-    Exit;
-  end;
-
-  PopulateTree;
+  // FIX: The initialization check and PopulateTree call have been removed from here.
+  // The VCL execution order makes it unsafe to rely on FManager.ActionManager here.
 end;
 
 procedure TfrmuShortcutEditor.PopulateTree;
@@ -197,7 +204,7 @@ begin
   end;
 
   // --- Phase 2: Save All Current ActionManager Shortcuts to JSON ---
-  FManager.SaveAllShortcuts; // <-- THIS IS THE NEW LINE
+  FManager.SaveAllShortcuts;
 
   PopulateTree;
   ShowMessage('Shortcuts applied and saved successfully.');
@@ -213,7 +220,7 @@ procedure TfrmuShortcutEditor.btnShortKeyClick(Sender: TObject);
 var
   Node: PVirtualNode;
   Data: PActionData;
-  PrintList: TStringList; // Use this to collect printable text
+  PrintList: TStringList;
 begin
   PrintList := TStringList.Create;
   try
@@ -234,9 +241,7 @@ begin
       Node := vstActions.GetNext(Node);
     end;
 
-    // TODO: Pass PrintList.Text to your reporting component or printing routine.
-    // Example using a Memo component for quick preview: Memo1.Lines.Text := PrintList.Text;
-
+    // In a real application, you would send PrintList.Text to a printer or report preview
   finally
     PrintList.Free;
   end;

@@ -13,20 +13,16 @@ implementation
 
 uses
   uDMmain, System.Hash, Data.DB;
-
 var
   FCurrentRoleID: Integer = 0; // Define the variable in the implementation section
-
 function GetCurrentRoleID: Integer;
 begin
   Result := FCurrentRoleID;
 end;
-
 function HashPassword(const APassword: string): string;
 begin
   Result := THashSHA2.GetHashString(APassword);
 end;
-
 function AuthenticateUser(const AUsername, APassword: string; out ARole: string): Boolean;
 var
   Q: TFDQuery;
@@ -34,21 +30,17 @@ begin
   Result := False;
   ARole := '';
   FCurrentRoleID := 0; // Reset role ID on new login attempt
-
   Q := TFDQuery.Create(nil);
   try
     Q.Connection := DMmain.FDConnectionmain;
-
     // MODIFIED SQL: Now selects ROLE_ID along with ROLE_NAME
     Q.SQL.Text :=
       'SELECT u.ROLE_ID, r.ROLE_NAME FROM USERS u ' +
       'JOIN ROLES r ON u.ROLE_ID = r.ROLE_ID ' +
       'WHERE u.USERNAME = :u AND u.PASSWORD_HASH = :p AND u.IS_ACTIVE = TRUE';
-
     Q.ParamByName('u').AsString := AUsername;
     Q.ParamByName('p').AsString := HashPassword(APassword);
     Q.Open;
-
     if not Q.Eof then
     begin
       // Store the Role ID for permission checks
@@ -61,7 +53,6 @@ begin
   end;
 end;
 
-
 function HasPermission(const APermissionName: string): Boolean;
 var
   RoleID: Integer;
@@ -69,17 +60,20 @@ var
 begin
   // 1. Get the current user's Role ID
   RoleID := GetCurrentRoleID;
-  Result := False; // Default to no permission
+  Result := False;
 
-  if RoleID <= 0 then // Check if a valid user is logged in
+  if RoleID <= 0 then
     Exit;
 
-  // 2. Query the ROLE_PERMISSIONS and PERMISSIONS tables
+  // 2. Query the ROLE_PERMISSIONS table, joining with PERMISSIONS to match the name.
   qryPerm := TFDQuery.Create(nil);
   try
     qryPerm.Connection := DMmain.FDConnectionmain;
+
+    // CORRECTED SQL: Joins ROLE_PERMISSIONS (using its PERMISSION_ID) to PERMISSIONS
+    // to match the string name (APermissionName).
     qryPerm.SQL.Text :=
-      'SELECT COUNT(*) ' +
+      'SELECT 1 ' +
       'FROM ROLE_PERMISSIONS rp ' +
       'JOIN PERMISSIONS p ON rp.PERMISSION_ID = p.PERMISSION_ID ' +
       'WHERE rp.ROLE_ID = :role AND p.PERMISSION_NAME = :perm';
@@ -89,13 +83,10 @@ begin
 
     qryPerm.Open;
 
-    // 3. Check the count (if > 0, the permission exists for the role)
-    if qryPerm.Fields[0].AsInteger > 0 then
-      Result := True;
+    Result := not qryPerm.Eof;
 
   finally
     qryPerm.Free;
   end;
 end;
-
 end.
