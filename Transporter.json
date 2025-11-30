@@ -1,0 +1,12 @@
+[
+  { "field": "NAME", "label": "Name", "width": 250, "maxlength": 100 },
+  { "field": "ADDRESS", "label": "Address", "width": 250, "maxlength": 255 },
+  { "field": "CITY", "label": "City", "width": 250, "maxlength": 50 },
+  { "field": "STATE", "label": "State", "width": 250, "maxlength": 50 },
+  { "field": "COUNTRY", "label": "Country", "width": 250, "maxlength": 50 },
+  { "field": "PIN_CODE", "label": "PIN Code", "width": 250, "maxlength": 10 },
+  { "field": "GSTIN", "label": "GSTIN", "width": 250, "maxlength": 15 },
+  { "field": "CONTACT_PERSON", "label": "Contact Person", "width": 250, "maxlength": 100 },
+  { "field": "PHONE", "label": "Phone", "width": 250, "maxlength": 20 },
+  { "field": "EMAIL", "label": "Email", "width": 250, "maxlength": 100 }
+]

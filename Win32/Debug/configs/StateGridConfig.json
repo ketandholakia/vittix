@@ -1,0 +1,5 @@
+[
+  { "field": "STATE_NAME", "title": "State Name", "width": 200 },
+  { "field": "STATE_CODE", "title": "Code", "width": 80 },
+  { "field": "ABBREVIATION", "title": "Abbr.", "width": 80 }
+]

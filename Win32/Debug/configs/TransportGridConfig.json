@@ -1,0 +1,10 @@
+[
+  { "field": "NAME", "title": "Transporter", "width": 200 },
+  { "field": "CITY", "title": "City", "width": 120 },
+  { "field": "STATE", "title": "State", "width": 100 },
+  { "field": "COUNTRY", "title": "Country", "width": 100 },
+  { "field": "PHONE", "title": "Phone", "width": 120 },
+  { "field": "EMAIL", "title": "Email", "width": 180 },
+  { "field": "GSTIN", "title": "GSTIN", "width": 150 },
+  { "field": "CONTACT_PERSON", "title": "Contact", "width": 150 }
+]

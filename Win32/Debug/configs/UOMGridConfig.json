@@ -1,0 +1,24 @@
+{
+  "columns": [
+    {
+      "field": "UOM_CODE",
+      "title": "Code",
+      "width": 100
+    },
+    {
+      "field": "UOM_NAME",
+      "title": "Name",
+      "width": 200
+    },
+    {
+      "field": "UQC_CODE",
+      "title": "UQC",
+      "width": 100
+    },
+    {
+      "field": "IS_ACTIVE",
+      "title": "Active",
+      "width": 80
+    }
+  ]
+}

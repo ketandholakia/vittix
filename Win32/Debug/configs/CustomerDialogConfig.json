@@ -1,0 +1,38 @@
+{
+  "fields": [
+    { "field": "NAME", "label": "Customer Name", "type": "DBEdit", "width": 250 },
+    { "field": "ADDRESS", "label": "Address", "type": "DBEdit", "width": 250 },
+    { "field": "CITY", "label": "City", "type": "DBEdit", "width": 200 },
+    {
+      "field": "STATE_ID",
+      "label": "State",
+      "type": "DBLookupComboBox",
+      "width": 200,
+      "listField": "STATE_NAME",
+      "keyField": "STATE_ID"
+    },
+    { "field": "PINCODE", "label": "Pincode", "type": "DBEdit", "width": 100 },
+    {
+      "field": "GSTIN",
+      "label": "GSTIN",
+      "type": "DBEdit",
+      "width": 150,
+      "validate": "GSTIN",
+      "matchPANState": true
+    },
+    {
+      "field": "PAN",
+      "label": "PAN",
+      "type": "DBEdit",
+      "width": 120,
+      "validate": "PAN"
+    },
+    { "field": "PHONE", "label": "Phone", "type": "DBEdit", "width": 150 },
+    { "field": "EMAIL", "label": "Email", "type": "DBEdit", "width": 250 },
+    { "field": "IS_ACTIVE", "label": "Active", "type": "DBCheckBox" }
+  ],
+  "buttons": [
+    { "caption": "OK", "modalResult": "mrOk" },
+    { "caption": "Cancel", "modalResult": "mrCancel" }
+  ]
+}

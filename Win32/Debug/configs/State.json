@@ -1,0 +1,42 @@
+{
+  "title": "State Editor",
+  "form": {
+    "width": 600,
+    "height": 400,
+    "position": "poScreenCenter"
+  },
+  "fields": [
+    {
+      "field": "STATE_ID",
+      "label": "State ID",
+      "type": "number",
+      "readonly": false,
+      "visible": true,
+      "width": 80
+    },
+    {
+      "field": "STATE_NAME",
+      "label": "State Name",
+      "type": "text",
+      "required": true,
+      "width": 250
+    },
+    {
+      "field": "STATE_CODE",
+      "label": "State Code",
+      "type": "text",
+      "required": true,
+      "width": 100,
+      "maxLength": 2,
+      "uppercase": true
+    },
+    {
+      "field": "ABBREVIATION",
+      "label": "Abbreviation",
+      "type": "text",
+      "required": false,
+      "width": 100,
+      "maxLength": 2
+    }
+  ]
+}

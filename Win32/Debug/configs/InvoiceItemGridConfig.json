@@ -1,0 +1,6 @@
+[
+  { "field": "ITEM_NAME", "title": "Item", "width": 150 },
+  { "field": "QUANTITY", "title": "Qty", "width": 60 },
+  { "field": "RATE", "title": "Rate", "width": 80 },
+  { "field": "AMOUNT", "title": "Amount", "width": 100 }
+]

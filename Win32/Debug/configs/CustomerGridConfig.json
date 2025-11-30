@@ -1,0 +1,37 @@
+{
+  "columns": [
+    {
+      "field": "NAME",
+      "title": "Customer Name",
+      "visible": true,
+      "width": 150,
+      "alignment": "left"
+    },
+    {
+      "field": "GSTIN",
+      "title": "GST",
+      "visible": true,
+      "width": 120,
+      "alignment": "left"
+    },
+    {
+      "field": "PAN",
+      "title": "PAN",
+      "visible": true,
+      "width": 90,
+      "alignment": "left"
+    },
+    {
+      "field": "STATE_NAME",
+      "title": "State",
+      "visible": true,
+      "width": 200,
+      "alignment": "left"
+    },
+    {
+      "field": "PHONE",
+      "title": "Phone",
+      "visible": false
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+[
+  {
+    "field": "INVOICE_NUMBER_DISPLAY",
+    "title": "Invoice #",
+    "width": 80,
+    "visible": true,
+    "readonly": true
+  },
+  {
+    "field": "INVOICE_DATE",
+    "title": "Invoice Date",
+    "width": 100,
+    "visible": true,
+    "format": "dd-mm-yyyy"
+  },
+  {
+    "field": "CUSTOMER_NAME",
+    "title": "Customer",
+    "width": 150,
+    "visible": true
+  },
+  {
+    "field": "TOTAL_GROSS_AMOUNT",
+    "title": "Gross Amount",
+    "width": 100,
+    "visible": true,
+    "format": "#,##0.00"
+  },
+  {
+    "field": "TOTAL_TAX_AMOUNT",
+    "title": "Tax",
+    "width": 80,
+    "visible": true,
+    "format": "#,##0.00"
+  },
+  {
+    "field": "TOTAL_DISCOUNT",
+    "title": "Discount",
+    "width": 80,
+    "visible": true,
+    "format": "#,##0.00"
+  },
+  {
+    "field": "NET_PAYABLE_AMOUNT",
+    "title": "Net Payable",
+    "width": 100,
+    "visible": true,
+    "format": "#,##0.00"
+  },
+  {
+    "field": "PAYMENT_STATUS",
+    "title": "Status",
+    "width": 90,
+    "visible": true
+  },
+  {
+    "field": "DUE_DATE",
+    "title": "Due Date",
+    "width": 100,
+    "visible": true,
+    "format": "dd-mm-yyyy"
+  },
+  {
+    "field": "NOTES",
+    "title": "Notes",
+    "width": 150,
+    "visible": false
+  },
+  {
+    "field": "CREATED_AT",
+    "title": "Created",
+    "width": 120,
+    "visible": false,
+    "readonly": true
+  }
+]

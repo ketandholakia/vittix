@@ -1,0 +1,35 @@
+{
+  "title": "Edit Unit of Measurement",
+  "fields": [
+    {
+      "type": "DBEdit",
+      "label": "Code",
+      "field": "UOM_CODE",
+      "width": 250
+    },
+    {
+      "type": "DBEdit",
+      "label": "Name",
+      "field": "UOM_NAME",
+      "width": 250
+    },
+    {
+      "type": "DBLookupComboBox",
+      "label": "UQC",
+      "field": "UQC_CODE",
+      "listSource": "dsUQC",
+      "listField": "UQC_CODE",
+      "keyField": "UQC_CODE",
+      "width": 150
+    },
+    {
+      "type": "DBCheckBox",
+      "label": "Active",
+      "field": "IS_ACTIVE"
+    }
+  ],
+  "buttons": [
+    { "caption": "OK", "modalResult": "mrOk" },
+    { "caption": "Cancel", "modalResult": "mrCancel" }
+  ]
+}
