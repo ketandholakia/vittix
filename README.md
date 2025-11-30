@@ -22,8 +22,8 @@ VittiX is a modular, role-based desktop application framework built using **Delp
 ### Prerequisites
 
 1.  **Delphi IDE:** Requires Delphi 10.x or newer (uses VCL framework).
-2.  **Firebird SQL:** A running instance of Firebird (tested with version 3.0 or 4.0).
-3.  **Components:** Requires standard VCL components and FireDAC. (Note: If using third-party components like Raize or DevExpress for specific UI elements, list them here.)
+2.  **Firebird SQL:** A running instance of Firebird (tested version 5.0).
+3.  **Components:** Requires standard VCL components and FireDAC, Raize, VirtualTree
 
 ### Installation and Setup
 
